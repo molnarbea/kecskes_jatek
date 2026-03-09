@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Saját név</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script type="module" src="index.js"></script>
+    </head>
+    <body>
+        <main>
+            <header>
+            <h1>Kecske-káposzta-farkas-csónak</h1>
+            <p>A tutajosnak át kell szállítani a folyó egyik partjáról a másikra egy káposztát, egy kecskét és egy farkast. Ügyelni kell arra, hogy a csónakban csak egyiküknek van hely (a révész evez) és ha a farkas egyedül marad a kecskével, akkor a kecskéből ebéd lesz, illetve ha a kecske egyedül marad a káposztával, akkor annak is lőttek!</p>
+            </header>
+            <aside id="bal">
+                <h2>Bal part</h2>
+                <p>
+                <img src="kepek/kecske2.png" alt="kecske" class="kep">
+                <img src="kepek/kaposzta.png" alt="kaposzta" class="kep">
+                <img src="kepek/farkas.png" alt="farkas" class="kep">
+                
+                </p>
+            </aside>
+            <article>
+                <button id="balra">⬅</button>
+                <div id="csonak">
+                    <img src="kepek/csonak.png" alt="csonak">
+                    <div id="rakomany"></div>
+                </div>
+                <button id="jobbra">➡</button>
+            </article>
+            <aside id="jobb">
+                <h2>Jobb part</h2>
+                <p></p>
+            </aside>
+            <footer> <p id="nev">Készítő neve</p> 
+                <form>
+                    <label>Ennyit ér a dolgozatom</label> 
+                    <input type="number" id="jegy" min="0" max="15">
+                    <input type="button" value="OK" id="OK">
+                    
+                    
+                </form>
+                </footer>
+        </main>
+    </body>
+</html>

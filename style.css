@@ -1,0 +1,129 @@
+header,
+article,
+aside {
+  margin: 10px;
+  padding: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 100px auto 100px; */
+  grid-template-areas:
+    "he he he"
+    "bal ar jobb"
+    "fo fo fo";
+  grid-gap: 10px;
+}
+
+header {
+  grid-area: he;
+  border: 1px solid black;
+}
+
+header h1 {
+  text-align: center;
+}
+
+header p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+#bal {
+  grid-area: bal;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  border: 1px solid black;
+}
+
+#jobb {
+  grid-area: jobb;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+article {
+  grid-area: ar;
+  border: 1px solid black;
+  background-color: rgb(72, 143, 201);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  min-width: 1000px;
+  position: relative;
+  min-height: 450px;
+}
+
+#csonak{
+  position: absolute;
+  left: 50px;
+  top: 10%;
+}
+
+#rakomany{
+    position: absolute;
+    top: 25%;
+    left: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+aside{
+  height: 400px;
+}
+
+h2{
+  text-align: center;
+  width: 100%;
+}
+
+footer {
+  grid-area: fo;
+}
+
+.kep{
+  width: 130px;
+}
+.kep img{
+  position: absolute;
+  width: 130px;
+  left: 200px;
+  top: 100px;
+}
+
+#balra{
+    color: rgb(72, 143, 201);
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    position:absolute;
+    left:10px;
+    top:40%;
+    font-size:40px;
+    cursor:pointer;
+}
+
+#jobbra{
+    color: rgb(72, 143, 201);
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    position:absolute;
+    right:10px;
+    top:40%;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.kiemelt{
+    border: 2pt solid red;
+    cursor: grab;
+}
+
