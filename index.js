@@ -114,7 +114,7 @@ function csonakEllenorzes() {
 }
 
 function partEllenorzes(oldal) {
-    if (csonakLista.length === 0) {
+    if (csonakLista.length == 0) {
         return;
     }
     let lista;
