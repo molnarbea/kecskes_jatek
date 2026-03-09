@@ -69,8 +69,8 @@ function balrolJobbra() {
     }
 }
 
-function nyeresEllenorzes(){
-    let jobbKepek = jobb.querySelectorAll(".kep");
+function jobbrolBalra() {
+    let jobbKepek = jobb.querySelectorAll("img");
 
     for (let index = 0; index < jobbKepek.length; index++) {
         jobbKepek[index].onclick = function (event) {
@@ -113,38 +113,57 @@ function csonakEllenorzes() {
     return true;
 }
 
-function partEllenorzes(oldal) {
-    let lista;
-
-    if (oldal === "bal") {
-        lista = bal.querySelectorAll(".kep");
-    } else {
-        lista = jobb.querySelectorAll(".kep");
-    }
+function partEllenorzes() {
+    let balLista = bal.querySelectorAll("img");
+    let jobbLista = jobb.querySelectorAll("img");
 
     let kecske = false;
     let kaposzta = false;
     let farkas = false;
 
-    for (let i = 0; i < lista.length; i++) {
-        if (lista[i].src.includes("kecske")) {
+    for (let i = 0; i < balLista.length; i++) {
+        if (balLista[i].src.includes("kecske")) {
             kecske = true;
         }
-        if (lista[i].src.includes("kaposzta")) {
+        if (balLista[i].src.includes("kaposzta")) {
             kaposzta = true;
         }
-        if (lista[i].src.includes("farkas")) {
+        if (balLista[i].src.includes("farkas")) {
             farkas = true;
         }
     }
 
-    if (kecske && kaposzta && !farkas) {
-        alert("A kecske megeszi a káposztát a " + oldal + " parton!");
+    if (balLista.length == 2 && kecske && kaposzta) {
+        alert("A kecske megeszi a káposztát a bal parton!");
+        location.reload();
+    }
+    if (balLista.length == 2 && farkas && kecske) {
+        alert("A farkas megeszi a kecskét a bal parton!");
         location.reload();
     }
 
-    if (kecske && farkas && !kaposzta) {
-        alert("A farkas megeszi a kecskét a " + oldal + " parton!");
+    kecske = false;
+    kaposzta = false;
+    farkas = false;
+
+    for (let i = 0; i < jobbLista.length; i++) {
+        if (jobbLista[i].src.includes("kecske")) {
+            kecske = true;
+        }
+        if (jobbLista[i].src.includes("kaposzta")) {
+            kaposzta = true;
+        }
+        if (jobbLista[i].src.includes("farkas")) {
+            farkas = true;
+        }
+    }
+
+    if (jobbLista.length == 2 && kecske && kaposzta) {
+        alert("A kecske megeszi a káposztát a jobb parton!");
+        location.reload();
+    }
+    if (jobbLista.length == 2 && farkas && kecske) {
+        alert("A farkas megeszi a kecskét a jobb parton!");
         location.reload();
     }
 }
@@ -155,21 +174,15 @@ function csonakMozgas() {
     const jobbGomb = document.getElementById("jobbra");
 
     balGomb.addEventListener("click", function () {
-        if (csonakOldal === "jobb") {
-            partEllenorzes("jobb");
-        } 
-
         csonak.style.left = "60px";
         csonakOldal = "bal";
+        partEllenorzes();
     });
 
     jobbGomb.addEventListener("click", function () {
-        if (csonakOldal === "bal") {
-            partEllenorzes("bal");
-        }
-
         csonak.style.left = "525px";
         csonakOldal = "jobb";
+        partEllenorzes();
     });
 }
 
